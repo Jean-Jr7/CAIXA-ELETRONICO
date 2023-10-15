@@ -5,7 +5,7 @@ public class CaixaEletronico {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        DecimalFormat df = new DecimalFormat("#.00");
+        DecimalFormat df = new DecimalFormat("#.000");
 
 
         double saldo = 1000.00; // Defina o saldo inicial da conta
