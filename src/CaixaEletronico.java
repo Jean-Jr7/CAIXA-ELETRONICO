@@ -1,14 +1,17 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class CaixaEletronico {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("#.00");
 
-        double saldo = 1000.0; // Defina o saldo inicial da conta
+
+        double saldo = 1000.00; // Defina o saldo inicial da conta
 
         System.out.println("Bem-vindo ao Caixa Eletrônico!");
-        System.out.printf("Seu saldo atual é R$%.2f%n", saldo);
+        System.out.println("Seu saldo atual é R$" + df.format(saldo));
 
         System.out.print("Digite o valor que você deseja sacar: ");
         double valorSaque = scanner.nextDouble();
@@ -17,12 +20,13 @@ public class CaixaEletronico {
              System.out.print("Saldo insuficiente");
 
 
-            }else{
+            }else
 
                 saldo -= valorSaque;
-                System.out.printf("Parabens voce sacou R$%.2f com sucesso %n", valorSaque);
-                System.out.printf("Seu saldo atual é R$%.2f%n", saldo);
-            }
+
+                    System.out.println("Parabéns, você sacou: R$" + df.format(valorSaque) + " com sucesso");
+                    System.out.println("Seu saldo atual agora é: R$" + df.format(saldo));
+            
 
        
 
@@ -33,3 +37,4 @@ public class CaixaEletronico {
         scanner.close();
     }
 }
+
